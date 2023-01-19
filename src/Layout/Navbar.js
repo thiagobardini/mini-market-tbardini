@@ -1,8 +1,13 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
   const activeLink = ({ isActive }) => (isActive ? "active" : "");
+
+  const quantityCart = cart.reduce((accumulate, curValue) => {
+    return accumulate + curValue.quantity;
+  }, 0);
+
   return (
     <nav className="navbar">
       <div
@@ -40,7 +45,7 @@ const Navbar = () => {
                 to="cart"
                 className={`nav-item nav-cart btn btn-accent ${activeLink}`}
               >
-                Cart (0)
+                Cart ({quantityCart})
               </NavLink>
             </li>
           </ul>
