@@ -1,13 +1,13 @@
 :root {
-  --white: #fff;
-  --black: #000;
+  --white: #000;
+  --black: #fff;
 
   /* Primary colors*/
-  --primary-1: #2b8379;
-  --primary-2: #19a596;
-  --primary-3: #7fd1c7;
-  --primary-4: #7fd1c7;
-  --primary-5: #d0f3ef;
+  --primary-1: #f6bd60;
+  --primary-2: #f7ede2;
+  --primary-3: #f5cac3;
+  --primary-4: #84a59d;
+  --primary-5: #f28482;
 
   /* Neutral colors */
   --neutral-1: #2c2c2c;
@@ -17,15 +17,15 @@
   --neutral-5: #f2ecee;
 
   /* Accent-blue colors */
-  --accent-1: #970e3d;
-  --accent-2: #c43464;
+  --accent-1: #ff595e;
+  --accent-2: #ffca3a;
   --accent-3: #de7699;
   --accent-4: #e6c3ce;
   --accent-5: #fff2f7;
 }
 
 body {
-  background-color: var(--neutral-5);
+  /* background-color: var(--neutral-5); */
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
@@ -62,7 +62,7 @@ a:hover {
 }
 
 .rounded {
-  border-radius: 30px;
+  border-radius: 4px;
 }
 
 .container {
@@ -191,7 +191,7 @@ input:focus {
 
 /* NAVBAR */
 .navbar {
-  background-color: white;
+  background-color: #07080D;
   padding: 10px;
   box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
     0px -3px 7px 1px rgba(0, 0, 0, 0.07);

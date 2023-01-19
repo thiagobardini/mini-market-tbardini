@@ -4,23 +4,27 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div class="home-layout">
-      <div>
-        <h1>Online shopping simplified</h1>
-        <p>
-          Order your groceries from <em>SuperM</em> with our easy to use app,
-          and get your products delivered straight to your doorstep.
-        </p>
-        <Link to="/products" class="btn btn-default">
-          Start shopping
-        </Link>
-      </div>
       <img
-        src="https://res.cloudinary.com/dbfn5lnvx/image/upload/q_auto,w_700/v1607770215/react-tutorial/supermarket/home.jpg"
+        src="https://i.imgur.com/j974h5I.png"
         width="350"
-        height="240"
+        height="auto"
         class="rounded home-image"
         alt=""
       />
+      <div>
+        <h1>Convenient Grocery Shopping</h1>
+        <p>
+          Convenient Grocery Shopping at Your Fingertips: Order from{" "}
+          <em>Mini Market's App</em> and Have it Delivered to Your Doorstep"
+        </p>
+        <Link
+          to="/products"
+          class="btn btn-default"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          Start shopping
+        </Link>
+      </div>
     </div>
   );
 };

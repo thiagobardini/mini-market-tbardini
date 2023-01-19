@@ -4,10 +4,15 @@ import About from "./Pages/About";
 import Products from "./Pages/products/Products";
 import Cart from "./Pages/Cart";
 import Navbar from "./Layout/Navbar";
+import BackgroundImage from "./Layout/BackgroundImage";
 
 function App() {
   return (
     <>
+      {/* <BackgroundImage
+        opacity={0.3}
+        image={"https://i.imgur.com/SdOA4Ke.jpg"}
+      /> */}
       <Navbar />
       <div className="container">
         <Routes>

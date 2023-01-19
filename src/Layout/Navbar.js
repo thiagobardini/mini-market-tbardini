@@ -11,7 +11,11 @@ const Navbar = () => {
       >
         <div style={{ flexGrow: 1 }}>
           <Link to="/" className="nav-brand">
-            SuperM
+            <img
+              src={"https://i.imgur.com/qHvvhHA.png"}
+              alt="Background image"
+              style={{ width: "100px" }}
+            />
           </Link>
         </div>
         <div>
