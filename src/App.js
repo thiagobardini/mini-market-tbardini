@@ -9,6 +9,8 @@ import ProductDetails from "./Pages/productDetails/ProductDetails";
 import ProductDetailInfo from "./Pages/productDetails/ProductDetailInfo";
 import ProductDetailNutrition from "./Pages/productDetails/ProductDetailNutrition";
 import ProductDetailStorage from "./Pages/productDetails/ProductDetailStorage";
+import StripeSuccess from "./Pages/StripeSuccess";
+import StripeFailed from "./Pages/StripeFailed";
 
 function App() {
   const [cart, setCart] = useState(
@@ -54,6 +56,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/success" element={<StripeSuccess />} />
+          <Route path="/failed" element={<StripeFailed />} />
           <Route
             path="/products"
             element={

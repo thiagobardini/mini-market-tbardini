@@ -14,12 +14,12 @@ const Home = () => {
       <div>
         <h1>Convenient Grocery Shopping</h1>
         <p>
-          Convenient Grocery Shopping at Your Fingertips: Order from{" "}
+          Convenient Shopping at Your Fingertips: Order from{" "}
           <em>Mini Market's App</em> and Have it Delivered to Your Doorstep"
         </p>
         <Link
           to="/products"
-          class="btn btn-default"
+          class="btn btn-accent"
           style={{ display: "flex", justifyContent: "center" }}
         >
           Start shopping

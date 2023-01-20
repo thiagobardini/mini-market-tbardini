@@ -24,8 +24,8 @@ const Cart = ({ cart, setCart }) => {
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "http://localhost:3000/cart",
-          cancelUrl: "http://localhost:3000/cart",
+          successUrl: "https://mini-market-tbardini.vercel.app/success",
+          cancelUrl: "https://mini-market-tbardini.vercel.app/failed",
           customerEmail: email,
         })
         .then((response) => {
@@ -110,7 +110,9 @@ const Cart = ({ cart, setCart }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                  <Button type="submit">Pay</Button>
+                  <Button type="submit" className="btn btn-accent">
+                    Pay
+                  </Button>
                 </form>
                 <div className="cart-credit-card">
                   <p>

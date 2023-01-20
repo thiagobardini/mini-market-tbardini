@@ -1,6 +1,6 @@
 :root {
-  --white: #000;
-  --black: #fff;
+  --white: #fff;
+  --black: #000;
 
   /* Primary colors*/
   --primary-1: #f6bd60;
@@ -9,7 +9,7 @@
   --primary-4: #f5cac3;
   --primary-1: #f28482;
 
-  --primary-1: #f28482;
+  --primary-1: #ee6d6b;
   --primary-2: #f5cac3;
   --primary-3: #f6bd60;
   --primary-4: #FBD690;
@@ -19,7 +19,7 @@
   --neutral-1: #2c2c2c;
   --neutral-2: #434343;
   --neutral-3: #94868b;
-  --neutral-4: #d9cfd3;
+  --neutral-4: #A49393;
   --neutral-5: #f2ecee;
 
   /* Accent-blue colors */
@@ -179,11 +179,11 @@ a:hover {
   margin-top: 1em;
   margin-bottom: 1.5em;
   padding: 0.75em 0.5em;
-  min-width: 200px;
+  min-width: 300px;
   border: none;
   border-left: 7px solid var(--neutral-4);
   transition: border-left-color 160ms;
-  background-color: white;
+  background-color: #EED6D3;
 }
 
 ::placeholder {

@@ -43,7 +43,7 @@ const Navbar = ({ cart }) => {
             <li>
               <NavLink
                 to="cart"
-                className={`nav-item nav-cart btn btn-accent ${activeLink}`}
+                className={`nav-item nav-cart btn btn-default ${activeLink}`}
               >
                 Cart ({quantityCart})
               </NavLink>

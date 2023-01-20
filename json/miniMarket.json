@@ -1,0 +1,99 @@
+{
+    "projectinfo": {
+      "id1": {
+        "description": "200g cheese block",
+        "id": 1,
+        "image": "https://i.imgur.com/bBlNDx2.png",
+        "name": "Cheese",
+        "nutrition": {
+          "carbs": 1.3,
+          "fat": 33,
+          "protein": 25,
+          "salt": 1
+        },
+        "price": 10,
+        "price_id": "price_1MJiiSJDdh9yRb5q8DrzE5JW",
+        "storage": "Store in a cool place (between 5°C and 15°C)"
+      },
+      "id2": {
+        "description": "1 GAL milk bottle",
+        "id": 2,
+        "image": "https://i.imgur.com/F02so49.png",
+        "name": "Milk",
+        "nutrition": {
+          "carbs": 11,
+          "fat": 15,
+          "protein": 16,
+          "salt": 0.44
+        },
+        "price": 5,
+        "price_id": "price_1MJjntJDdh9yRb5qI97K9IhK",
+        "storage": "Store in the fridge"
+      },
+      "id3": {
+        "description": "1 piece of tomato",
+        "id": 3,
+        "image": "https://i.imgur.com/b5HrLLb.png",
+        "name": "Tomato",
+        "nutrition": {
+          "carbs": 4,
+          "fat": 0.2,
+          "protein": 1,
+          "salt": 0
+        },
+        "price": 2.75,
+        "price_id": "price_1MRKVEJDdh9yRb5qiNsooDRh",
+        "storage": "Store in a cool place, away from the sun."
+      },
+      "id4": {
+        "description": "500g pineapple",
+        "id": 4,
+        "image": "https://i.imgur.com/SVvS6NF.png",
+        "name": "Pineapple",
+        "nutrition": {
+          "carbs": 22,
+          "fat": 2,
+          "protein": 1,
+          "salt": 0
+        },
+        "price": 3.25,
+        "price_id": "price_1MPsj8JDdh9yRb5qopZpRfYI",
+        "storage": "Store in a cool place, away from the sun."
+      }
+    },
+    "supermarket": [
+      {
+        "description": "200g cheese block",
+        "id": 1,
+        "image": "https://i.imgur.com/bBlNDx2.png",
+        "name": "Cheese",
+        "price": 10,
+        "price_id": "price_1MJiiSJDdh9yRb5q8DrzE5JW"
+      },
+      {
+        "description": "1 GAL milk bottle",
+        "id": 2,
+        "image": "https://i.imgur.com/F02so49.png",
+        "name": "Milk",
+        "price": 5,
+        "price_id": "price_1MJjntJDdh9yRb5qI97K9IhK"
+      },
+      {
+        "description": "1 piece of tomato",
+        "id": 3,
+        "image": "https://i.imgur.com/b5HrLLb.png",
+        "name": "Tomato",
+        "price": 2.75,
+        "price_id": "price_1MRKVEJDdh9yRb5qiNsooDRh"
+      },
+      {
+        "description": "500g pineapple",
+        "id": 4,
+        "image": "https://i.imgur.com/SVvS6NF.png",
+        "name": "Pineapple",
+        "price": 3.25,
+        "price_id": "price_1MPsj8JDdh9yRb5qopZpRfYI"
+      }
+    ]
+  }
+  
