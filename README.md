@@ -34,7 +34,6 @@ API https://react-projetcs.firebaseio.com/
 - [Firebase - Realtime Database](https://firebase.google.com/docs/database)
 
 ## Unsolved Problems
-- SuccessUrl will redirect to a new successful checkout page
-- Cart component needs to remove all the products from localStorage after a successful checkout.
+ - Add Redux Toolkit
 
 To get started, please make sure to run the command `npm install` and `npm start` to start the development server. Then, you can begin browsing and purchasing products from the application.

@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const StripeFailed = () => {
+const StripeFailed = ({ setCart }) => {
+  useEffect(() => {
+    localStorage.clear();
+    setCart([]);
+  }, []);
+
   return (
     <div class="home-layout">
       <img

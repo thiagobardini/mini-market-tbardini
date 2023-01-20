@@ -60,7 +60,7 @@ function App() {
             path="/success"
             element={<StripeSuccess setCart={setCart} />}
           />
-          <Route path="/failed" element={<StripeFailed />} />
+          <Route path="/failed" element={<StripeFailed setCart={setCart} />} />
           <Route
             path="/products"
             element={
