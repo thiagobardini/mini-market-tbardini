@@ -10,7 +10,6 @@
 Reference: [Stripe JS](https://stripe.com/docs/stripe-js/react) 
 
 ## Unsolved Problems
- 
-- Redirect the successUrl and cancelUrl (Stripe API) in the Cart component to the link that will be published
+  
 - successUrl will redirect to a new successfull checkout page   
   - Cart component needs to remove all the products from localStorage after a successfull checkout 
