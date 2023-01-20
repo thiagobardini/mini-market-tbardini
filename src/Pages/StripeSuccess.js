@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const StripeSuccess = ({ setCart }) => {
+  useEffect(() => {
+    localStorage.clear();
+    setCart([]);
+  }, []);
+
   return (
     <div class="home-layout">
       <img
@@ -27,4 +32,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default StripeSuccess;

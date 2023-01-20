@@ -56,7 +56,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/success" element={<StripeSuccess />} />
+          <Route
+            path="/success"
+            element={<StripeSuccess setCart={setCart} />}
+          />
           <Route path="/failed" element={<StripeFailed />} />
           <Route
             path="/products"
