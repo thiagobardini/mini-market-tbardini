@@ -28,14 +28,23 @@
   --accent-3: #FBB8B0;
   --accent-4: #e6c3ce;
   --accent-5: #fff2f7;
+
+  --surface-color: white;
+  --surface-shadow: #c4c4c4;
 }
 
 body {
-  /* background-color: var(--neutral-5); */
+  background-color: var(--neutral-5);
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
   "Helvetica Neue", sans-serif;
+}
+
+body.dark {
+  color: var(--white);
+  --neutral-5: #222;
+  --surface-color: #444;
 }
 
 h1 {
@@ -140,7 +149,7 @@ a:hover {
   color: var(--primary-1);
   background-color: var(--primary-4);
   border: var(--primary-1) 2px solid;
-  box-shadow: 1px 1px 7px #c4c4c4;
+  box-shadow: 1px 1px 7px var(--surface-shadow);
   padding: 8px 25px;
   border-radius: 10px;
 }
@@ -183,7 +192,7 @@ a:hover {
   border: none;
   border-left: 7px solid var(--neutral-4);
   transition: border-left-color 160ms;
-  background-color: #EED6D3;
+  background-color: var(--surface-color);
 }
 
 ::placeholder {
@@ -256,6 +265,11 @@ input:focus {
   padding: 10px 25px;
 }
 
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 /* TABS */
 .tabs {
   margin: 0 0 40px 0;
@@ -323,7 +337,7 @@ input:focus {
 }
 
 .product {
-  background-color: white;
+  background-color: var(--surface-color);
   padding: 15px 20px;
   border-radius: 25px;
   display: grid;
@@ -341,7 +355,7 @@ input:focus {
 }
 
 .product-delete {
-  background-color: white;
+  background-color: var(--surface-color);
   padding: 5px 10px;
   color: var(--accent-1);
   border-color: var(--accent-2);
@@ -356,7 +370,7 @@ input:focus {
   position: absolute;
   top: 8px;
   right: -15px;
-  background-color: white;
+  background-color: var(--surface-color);
   border-radius: 50%;
   padding: 5px;
 }
@@ -392,7 +406,7 @@ input:focus {
 
 /* product details page */
 .product-details-image {
-  background-color: white;
+  background-color: var(--surface-color);
   padding: 10px;
   border-radius: 20px;
 }
@@ -405,7 +419,7 @@ input:focus {
 .table thead {
   background-color: var(--primary-1);
   color: white;
-  border: 1px solid white;
+  border: 1px solid var(--surface-color);
   border-top: 0;
 }
 .table.table-cart thead {
@@ -420,7 +434,7 @@ input:focus {
 
 .table tbody {
   font-size: 18px;
-  border: 1px solid white;
+  border: 1px solid var(--surface-color);
 }
 
 .table-cart {
@@ -438,7 +452,7 @@ input:focus {
 }
 
 .table tbody tr:nth-child(2n) {
-  background-color: white;
+  background-color: var(--surface-color);
 }
 
 .table tbody tr:nth-child(2n + 1) {
@@ -524,4 +538,45 @@ input:focus {
     stroke-dashoffset: 187;
     transform: rotate(450deg);
   }
+}
+
+
+.toggle-container {
+  width: 70px;
+  background-color: #c4c4c4;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 3px;
+  padding: 2px;
+  height: 32px;
+  position: relative;
+}
+
+.dialog-button {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #002b49;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  min-width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  min-width: unset;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 34px;
+  transition: all 0.3s ease;
+}
+
+.disabled {
+  background-color: #707070;
+  left: 2px;
 }
