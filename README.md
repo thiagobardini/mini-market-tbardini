@@ -32,6 +32,7 @@ API https://react-projetcs.firebaseio.com/
 - [Stripe JS](https://stripe.com/docs/stripe-js/react) 
 - [Vercel](https://vercel.com/) 
 - [Firebase - Realtime Database](https://firebase.google.com/docs/database)
+- [React Tutorial](https://react-tutorial.app/)
 
 ## Unsolved Problems
  - Add Redux Toolkit
