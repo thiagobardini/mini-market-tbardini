@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import Button from "../Components/Button";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = ({ cart }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
@@ -30,60 +31,81 @@ const Navbar = ({ cart }) => {
     return accumulate + curValue.quantity;
   }, 0);
 
+  const toggleHamburger = () => {
+    setOpen(!isOpen);
+  };
+
   return (
-    <nav className="navbar">
-      <div
-        className="container"
-        style={{ display: "flex", width: "100%", alignItems: "center" }}
-      >
-        <div style={{ flexGrow: 1 }}>
-          <Link to="/" className="nav-brand">
-            <img
-              src={"https://i.imgur.com/qHvvhHA.png"}
-              alt="Background image"
-              style={{ width: "120px" }}
-            />
-          </Link>
+    <>
+      <nav className="navbar">
+        <div
+          className="container"
+          style={{ display: "flex", width: "100%", alignItems: "center" }}
+        >
+          <div style={{ flexGrow: 1 }}>
+            <Link to="/" className="nav-brand">
+              <img
+                src={"https://i.imgur.com/qHvvhHA.png"}
+                alt="Background image"
+                style={{ width: "120px" }}
+              />
+            </Link>
+          </div>
+
+          <div className="nav-display">
+            <ul className="nav-wrapper">
+              <li className="nav-item">
+                <div className="toggle-container" onClick={handleThemeClick}>
+                  <div
+                    className={`dialog-button ${isDarkMode ? "" : "disabled"}`}
+                  >
+                    {isDarkMode ? "Dark" : "Light"}
+                  </div>
+                </div>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/" className={activeLink}>
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="about" className={activeLink}>
+                  About us
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="products" className={activeLink}>
+                  Products
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="cart"
+                  className={`nav-item nav-cart btn btn-default ${activeLink}`}
+                >
+                  Cart ({quantityCart})
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <ul className="nav-wrapper">
-            <li className="nav-item">
-              <div className="toggle-container" onClick={handleThemeClick}>
-                <div
-                  className={`dialog-button ${isDarkMode ? "" : "disabled"}`}
-                >
-                  {isDarkMode ? "Dark" : "Light"}
-                </div>
-              </div>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/" className={activeLink}>
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="about" className={activeLink}>
-                About us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="products" className={activeLink}>
-                Products
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="cart"
-                className={`nav-item nav-cart btn btn-default ${activeLink}`}
-              >
-                Cart ({quantityCart})
-              </NavLink>
-            </li>
-          </ul>
+        <div className="hamburger-display" onClick={toggleHamburger}>
+          <div className="toggle-mobile" onClick={handleThemeClick}>
+            <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
+              {isDarkMode ? "Dark" : "Light"}
+            </div>
+          </div>
+          <HamburgerMenu
+            isOpen={isOpen}
+            setOpen={setOpen}
+            isDarkMode={isDarkMode}
+            handleThemeClick={handleThemeClick}
+            quantityCart={quantityCart}
+          />
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

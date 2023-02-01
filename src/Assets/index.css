@@ -232,7 +232,7 @@ input:focus {
 .navbar ul {
   list-style-type: none;
   overflow: hidden;
-  padding-right: 20px;
+  padding: 0 20px;
   text-align: center;
 }
 
@@ -552,6 +552,19 @@ input:focus {
   position: relative;
 }
 
+.toggle-mobile {
+  width: 70px;
+  background-color: #c4c4c4;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 3px;
+  padding: 2px;
+  height: 32px;
+  position: absolute;
+  right: 18px;
+  top: 14px;
+}
+
 .dialog-button {
   font-size: 12px;
   line-height: 16px;
@@ -580,3 +593,64 @@ input:focus {
   background-color: #707070;
   left: 2px;
 }
+
+.full-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #07080D;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+}
+
+.page {
+  padding: 24px 0 0 24px;
+}
+
+.mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 24px;
+}
+
+.menu-list-mobile ul {
+  position: relative;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 22px;
+  gap: 30px;
+  margin-top: 60px;
+}
+.hamburger-react {
+  position: absolute;
+  padding-left: 24px;
+}
+@media (max-width: 800px) {
+    .nav-display {
+      display: none;
+    }
+    .nav-cart {
+      width: 88px;
+      text-align: center;
+      padding: 10px 25px;
+      font-size: 22px;
+      margin-top: 20px;
+    }
+  }
+  @media (min-width: 800px) {
+    .hamburger-display {
+      display: none;
+    }
+    .toggle-mobile {
+      display: none;
+    }
+  }
