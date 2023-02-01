@@ -632,6 +632,7 @@ input:focus {
   gap: 30px;
   margin-top: 60px;
 }
+
 .hamburger-react {
   position: absolute;
   padding-left: 24px;
@@ -646,6 +647,13 @@ input:focus {
       padding: 10px 25px;
       font-size: 22px;
       margin-top: 20px;
+    }
+    .about-image {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .display-margin {
+      margin: 0 20px;
     }
   }
   @media (min-width: 800px) {

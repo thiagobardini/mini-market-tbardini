@@ -21,7 +21,10 @@ const ProductDetails = () => {
   return (
     <>
       <div className="product-details-layout">
-        <div>
+        <div
+          className="display-margin"
+          style={{ margin: "0 auto", textAlign: "center" }}
+        >
           <h2>{product.name}</h2>
           <img
             width="125"

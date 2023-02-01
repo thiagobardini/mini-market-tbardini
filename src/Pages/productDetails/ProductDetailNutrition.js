@@ -6,7 +6,7 @@ const ProductDetailNutrition = () => {
   const nutrition = product.nutrition;
   return (
     <>
-      <table class="table table-nutrition">
+      <table className="table table-nutrition">
         <thead>
           <tr>
             <th>Nutrient</th>

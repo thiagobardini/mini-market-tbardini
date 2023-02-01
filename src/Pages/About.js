@@ -2,12 +2,12 @@ import React from "react";
 
 const About = () => {
   return (
-    <div class="about-layout">
+    <div className={`about-layout display-margin`}>
       <img
         src="https://i.imgur.com/wsvosXs.png"
         height="auto"
         width="350"
-        class="rounded"
+        className={`rounded about-image`}
         alt=""
       />
       <div>

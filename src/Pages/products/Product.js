@@ -37,7 +37,7 @@ const Product = (props) => {
             {quantity !== 0 && (
               <Button
                 outline
-                class="product-delete"
+                className="product-delete"
                 onClick={() => onProductDelete(details.id)}
               >
                 x

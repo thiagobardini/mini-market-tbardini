@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div class="home-layout">
+    <div className="home-layout">
       <img
         src="https://i.imgur.com/j974h5I.png"
         width="350"
         height="auto"
-        class="rounded home-image"
+        className="rounded home-image"
         alt=""
       />
-      <div>
+      <div className="display-margin">
         <h1>Convenient Grocery Shopping</h1>
         <p>
           Convenient Shopping at Your Fingertips: Order from{" "}
@@ -19,7 +19,7 @@ const Home = () => {
         </p>
         <Link
           to="/products"
-          class="btn btn-accent"
+          className="btn btn-accent"
           style={{ display: "flex", justifyContent: "center" }}
         >
           Start shopping

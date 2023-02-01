@@ -8,7 +8,7 @@ const StripeSuccess = ({ setCart }) => {
   }, []);
 
   return (
-    <div class="home-layout">
+    <div className="home-layout">
       <img
         src="https://i.imgur.com/VCJEqSC.png"
         width="100%"

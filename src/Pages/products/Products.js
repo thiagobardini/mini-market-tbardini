@@ -18,9 +18,11 @@ export default function Products(props) {
   }, []);
 
   return (
-    <div class="products-layout">
-      <h1>Products</h1>
-      <p>Take a look at our products</p>
+    <div className="products-layout">
+      <div className="display-margin">
+        <h1>Products</h1>
+        <p>Take a look at our products</p>
+      </div>
       {loading && (
         <div className="box-loader">
           <div>
@@ -28,7 +30,7 @@ export default function Products(props) {
           </div>
         </div>
       )}
-      <div class="products-grid">
+      <div className="products-grid">
         {/* <!-- render the products --> */}
         {products.map((product) => {
           return (

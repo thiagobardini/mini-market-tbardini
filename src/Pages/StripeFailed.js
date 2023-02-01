@@ -8,7 +8,7 @@ const StripeFailed = ({ setCart }) => {
   }, []);
 
   return (
-    <div class="home-layout">
+    <div className="home-layout">
       <img
         src="https://i.imgur.com/MULcw2C.png"
         style={{ maxWidth: "300px" }}
