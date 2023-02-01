@@ -3,12 +3,6 @@
   --black: #000;
 
   /* Primary colors*/
-  --primary-1: #f6bd60;
-  --primary-2: #f7ede2;
-  --primary-3: 
-  --primary-4: #f5cac3;
-  --primary-1: #f28482;
-
   --primary-1: #ee6d6b;
   --primary-2: #f5cac3;
   --primary-3: #f6bd60;
@@ -39,10 +33,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
   "Helvetica Neue", sans-serif;
+  color: var(--black);
 }
 
 body.dark {
-  color: var(--white);
+  --black: var(--white);
   --neutral-5: #222;
   --surface-color: #444;
 }
@@ -276,6 +271,10 @@ input:focus {
   border-bottom: var(--neutral-4) solid 1px;
 }
 
+
+.tabs .tab-active {
+  border-bottom: 7px solid var(--primary-1);
+}
 .tabs ul {
   list-style-type: none;
   margin: 0;
@@ -294,8 +293,9 @@ input:focus {
   padding-left: 15px;
   padding-right: 15px;
 }
-.tabs .tab-active {
-  border-bottom: 7px solid var(--primary-1);
+
+.tabs-title { 
+  color: var(----primary-2);
 }
 
 /* Pages */
