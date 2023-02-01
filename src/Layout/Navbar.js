@@ -90,12 +90,12 @@ const Navbar = ({ cart }) => {
           </div>
         </div>
 
-        <div className="hamburger-display">
-          <div className="toggle-mobile" onClick={handleThemeClick}>
-            <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
-              {isDarkMode ? "Dark" : "Light"}
-            </div>
+        <div className="toggle-mobile" onClick={handleThemeClick}>
+          <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
+            {isDarkMode ? "Dark" : "Light"}
           </div>
+        </div>
+        <div className="hamburger-display" onClick={toggleHamburger}>
           <HamburgerMenu
             isOpen={isOpen}
             setOpen={setOpen}
