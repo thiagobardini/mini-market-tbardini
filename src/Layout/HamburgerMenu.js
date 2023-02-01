@@ -2,7 +2,7 @@ import React from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-router-dom";
 
-const HamburgerMenu = ({ isOpen, setOpen, handleThemeClick, quantityCart }) => {
+const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
   return (
     <div className={`page ${isOpen ? "full-page" : ""}`}>
       <Hamburger toggled={isOpen} toggle={setOpen} color="white" />

@@ -90,7 +90,7 @@ const Navbar = ({ cart }) => {
           </div>
         </div>
 
-        <div className="hamburger-display" onClick={toggleHamburger}>
+        <div className="hamburger-display">
           <div className="toggle-mobile" onClick={handleThemeClick}>
             <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
               {isDarkMode ? "Dark" : "Light"}
@@ -99,8 +99,6 @@ const Navbar = ({ cart }) => {
           <HamburgerMenu
             isOpen={isOpen}
             setOpen={setOpen}
-            isDarkMode={isDarkMode}
-            handleThemeClick={handleThemeClick}
             quantityCart={quantityCart}
           />
         </div>

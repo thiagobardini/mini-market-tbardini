@@ -34,6 +34,7 @@ body {
   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
   "Helvetica Neue", sans-serif;
   color: var(--black);
+  padding: 0;
 }
 
 body.dark {
@@ -78,7 +79,6 @@ a:hover {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* BUTTONS */
