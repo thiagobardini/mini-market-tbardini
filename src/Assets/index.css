@@ -604,6 +604,7 @@ input:focus {
   transition-property: background-color;
   transition-timing-function: ease-in-out;
   transition-duration: 250ms;
+  z-index: 100;
 }
 
 .page {
