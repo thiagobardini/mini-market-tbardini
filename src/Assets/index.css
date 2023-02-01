@@ -561,8 +561,9 @@ input:focus {
   padding: 2px;
   height: 32px;
   position: absolute;
-  right: 18px;
-  top: 14px;
+  right: 5px;
+  top: 5px;
+  
 }
 
 .dialog-button {
