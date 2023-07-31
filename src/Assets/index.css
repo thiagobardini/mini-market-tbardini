@@ -657,6 +657,10 @@ input:focus {
 .item-link {
   color: var(--black);
 }
+
+.img-grow {
+  flex-grow: 1;
+}
 @media (max-width: 800px) {
     .nav-display {
       display: none;
@@ -675,6 +679,10 @@ input:focus {
     .display-margin {
       margin: 0 20px;
     }
+    .img-grow {
+      flex-grow: 0;
+    }
+    
   }
   @media (min-width: 800px) {
     .hamburger-display {

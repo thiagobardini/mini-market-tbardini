@@ -42,7 +42,7 @@ const Navbar = ({ cart }) => {
           className="container"
           style={{ display: "flex", width: "100%", alignItems: "center" }}
         >
-          <div style={{ flexGrow: 1 }}>
+          <div className="img-grow">
             <Link to="/" className="nav-brand">
               <img
                 src={"https://i.imgur.com/qHvvhHA.png"}
