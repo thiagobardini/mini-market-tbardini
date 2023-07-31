@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
   return (
-    <div id="hamburgerMenu" className={`page ${isOpen ? "full-page" : ""}`}>
+    <div id="hamburgerMenu" className={`${isOpen ? "full-page" : ""}`}>
       <div id="hamburger-icon">
         <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
       </div>
