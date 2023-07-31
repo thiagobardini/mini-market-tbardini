@@ -322,7 +322,7 @@ input:focus {
 }
 
 .product-details-layout {
-  padding-top: 40px;
+  padding-top: 15px;
   padding-bottom: 40px;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -606,10 +606,7 @@ input:focus {
   transition-timing-function: ease-in-out;
   transition-duration: 250ms;
   z-index: 100;
-}
-
-.page {
-  padding: 24px 0 0 24px;
+  padding: 24px;
 }
 
 .mobile-wrapper {
@@ -638,10 +635,6 @@ input:focus {
   padding-left: 24px;
 }
 
-#hamburger-icon {
-  padding-bottom: 21px;
-}
-
 .hamburger-display {
   display: flex;
   align-items: center;
@@ -650,6 +643,7 @@ input:focus {
 
 .nav-cart-style {
   width: 75px;
+  padding-right: 10px;
 }
 
 .nav-cart.btn {
