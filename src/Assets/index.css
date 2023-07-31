@@ -211,11 +211,13 @@ input:focus {
 }
 
 .nav-brand {
+  z-index: 1200;
   font-size: 40px;
   font-weight: 450;
   text-decoration: none;
   padding-left: 20px;
   color: initial;
+  position: relative;
 }
 .nav-brand:hover {
   text-decoration: none;
@@ -637,8 +639,10 @@ input:focus {
 }
 
 .nav-cart-style {
-  width: 75px;
   padding-right: 10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .nav-cart.btn {

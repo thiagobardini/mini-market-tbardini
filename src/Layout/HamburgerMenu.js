@@ -12,7 +12,6 @@ const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
           position: "relative",
           transition: "all 0.4s cubic-bezier(0, 0, 0, 1) 0s",
           userSelect: "none",
-          width: "48px",
           outline: "none",
           transform: "rotate(-180deg)",
           marginRight: "32px",

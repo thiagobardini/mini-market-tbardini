@@ -95,10 +95,10 @@ const Navbar = ({ cart }) => {
             {isDarkMode ? "Dark" : "Light"}
           </div>
         </div>
+        <Link to="cart" className={`nav-cart-style`}>
+          Cart ({quantityCart})
+        </Link>
         <div className="hamburger-display">
-          <Link to="cart" className={`nav-cart-style`}>
-            Cart ({quantityCart})
-          </Link>
           <div onClick={toggleHamburger}>
             <HamburgerMenu
               isOpen={isOpen}
