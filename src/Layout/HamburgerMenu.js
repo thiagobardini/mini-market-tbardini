@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
   return (
     <div id="hamburgerMenu" className={`page ${isOpen ? "full-page" : ""}`}>
-      <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
+      <div id="hamburger-icon">
+        <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
+      </div>
       {isOpen && (
         <div className="mobile-wrapper">
           <div>

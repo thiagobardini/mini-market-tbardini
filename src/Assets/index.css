@@ -671,3 +671,6 @@ input:focus {
     right: 0;
   }
   
+  #hamburger-icon {
+    padding-top: 40px;
+  }
