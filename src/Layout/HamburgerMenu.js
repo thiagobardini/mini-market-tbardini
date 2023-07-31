@@ -15,6 +15,7 @@ const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
           width: "48px",
           outline: "none",
           transform: "rotate(-180deg)",
+          marginRight: "32px",
         }}
       >
         <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
