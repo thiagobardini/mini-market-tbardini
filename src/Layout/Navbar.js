@@ -42,15 +42,17 @@ const Navbar = ({ cart }) => {
           className="container"
           style={{ display: "flex", width: "100%", alignItems: "center" }}
         >
-          <div className="img-grow">
-            <Link to="/" className="nav-brand">
-              <img
-                src={"https://i.imgur.com/qHvvhHA.png"}
-                alt="Background image"
-                style={{ width: "120px" }}
-              />
-            </Link>
-          </div>
+          {!isOpen && (
+            <div className="img-grow">
+              <Link to="/" className="nav-brand">
+                <img
+                  src={"https://i.imgur.com/qHvvhHA.png"}
+                  alt="Background image"
+                  style={{ width: "120px" }}
+                />
+              </Link>
+            </div>
+          )}
 
           <div className="nav-display">
             <ul className="nav-wrapper">

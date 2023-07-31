@@ -639,8 +639,6 @@ input:focus {
 }
 
 .nav-cart-style {
-  padding-right: 10px;
-  position: absolute;
   text-align: center;
   width: 100%;
 }
@@ -688,6 +686,10 @@ input:focus {
       display: none;
     }
     .toggle-mobile {
+      display: none;
+    }
+
+    .nav-cart-style {
       display: none;
     }
   }
