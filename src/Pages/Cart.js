@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import Button from "../Components/Button";
 import Input from "../Components/Input";
+import { Link } from "react-router-dom";
 
 const stripeLoadedPromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 
@@ -70,7 +71,9 @@ const Cart = ({ cart, setCart }) => {
                             height="30"
                             alt=""
                           />
-                          {product.name}
+                          <Link to="/products" className="item-link">
+                            {product.name}
+                          </Link>
                         </td>
                         <td>${product.price}</td>
                         <td>{product.quantity}</td>
