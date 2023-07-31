@@ -639,6 +639,7 @@ input:focus {
 }
 
 .nav-cart-style {
+  /* position: absolute; */
   text-align: center;
   width: 100%;
 }
