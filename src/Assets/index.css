@@ -630,11 +630,6 @@ input:focus {
   margin-top: 60px;
 }
 
-.hamburger-react {
-  position: absolute;
-  padding-left: 24px;
-}
-
 .hamburger-display {
   display: flex;
   align-items: center;

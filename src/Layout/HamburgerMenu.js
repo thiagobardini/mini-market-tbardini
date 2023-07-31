@@ -4,8 +4,19 @@ import { Link } from "react-router-dom";
 
 const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
   return (
-    <div id="hamburgerMenu" className={isOpen && "full-page"}>
-      <div>
+    <div className={isOpen && "full-page"}>
+      <div
+        style={{
+          cursor: "pointer",
+          height: "48px",
+          position: "relative",
+          transition: "all 0.4s cubic-bezier(0, 0, 0, 1) 0s",
+          userSelect: "none",
+          width: "48px",
+          outline: "none",
+          transform: "rotate(-180deg)",
+        }}
+      >
         <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
       </div>
       {isOpen && (
