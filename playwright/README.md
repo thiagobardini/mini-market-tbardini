@@ -1,3 +1,5 @@
+![Playwright Logo](../public/Playwright_Logo.svg "Playwright")
+
 # Playwright Testing Instructions
 
 This document provides instructions on how to execute and interact with end-to-end tests using Playwright for our demo project. The setup is designed to cover testing in both desktop and mobile viewports to ensure our application's cross-environment reliability and responsiveness.
