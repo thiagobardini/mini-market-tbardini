@@ -15,7 +15,7 @@ const Home = () => {
         <h1>Convenient Grocery Shopping</h1>
         <p>
           Convenient Shopping at Your Fingertips: Order from{" "}
-          <em>Mini Market's App</em> and Have it Delivered to Your Doorstep"
+          <em>Mini Market's App</em> and Have it Delivered to Your Doorstep.
         </p>
         <Link
           to="/products"
