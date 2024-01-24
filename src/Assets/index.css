@@ -600,11 +600,11 @@ input:focus {
 }
 
 .full-page {
-  position: fixed; /* Faz o menu ser fixo na página */
-  top: 0; /* Alinha ao topo da página */
-  left: 0; /* Alinha à esquerda da página */
-  height: 100%; /* Faz o menu ter a altura total da página */
-  width: 100%; /* Faz o menu ter a largura total da página */
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  height: 100%; 
+  width: 100%; 
   z-index: 1000;
   transition-property: background-color;
   transition-timing-function: ease-in-out;
@@ -620,7 +620,7 @@ input:focus {
   width: 100%;
   top: 50px;
   max-height: calc(100vh - 50px);
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 .menu-list-mobile ul {
@@ -643,6 +643,13 @@ input:focus {
   justify-content: center;
 }
 
+.hamburger-position {
+  position: fixed; 
+  top: 10px; 
+  right: 10px; 
+  z-index: 100; 
+}
+
 .nav-cart-style {
   text-align: center;
   width: 100%;
@@ -663,6 +670,11 @@ input:focus {
 .img-grow {
   flex-grow: 1;
 }
+
+.cart-layout {
+  margin: 0 20px;
+}
+
 @media (max-width: 800px) {
   .nav-display {
     display: none;

@@ -13,8 +13,9 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
   };
 
   return (
-    <div className={isOpen && "full-page"} style={{ backgroundColor: isDarkMode && isOpen ? "#07080d" : "#444", zIndex: 99999 }}>
+    <div className={isOpen && "full-page"} style={{ backgroundColor: "#07080d" , zIndex: 99999 }}>
       <div
+      className="hamburger-position"
         style={{
           backgroundColor: !isOpen && "#07080d",
           display: "flex",
