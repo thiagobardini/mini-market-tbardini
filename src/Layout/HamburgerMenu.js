@@ -20,7 +20,7 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
           backgroundColor: !isOpen && "#07080d",
           display: "flex",
           justifyContent: "right",
-          margin: isOpen && "30px",
+          margin:  "30px",
           position: "relative",
         }}
       >
