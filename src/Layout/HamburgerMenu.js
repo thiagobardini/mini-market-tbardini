@@ -12,6 +12,12 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
     handleThemeClick();
   };
 
+  const handleLinkClick = () => {
+    if (isOpen) {
+      toggleHamburger();
+    }
+  };
+
   return (
     <div className={isOpen && "full-page"} style={{ backgroundColor: "#07080d", zIndex: 99999 }}>
       <div
@@ -29,20 +35,26 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
       {isOpen && (
         <div className='mobile-wrapper'>
           <div>
-            <Link to='/'>
+            <Link to='/' onClick={handleLinkClick}>
               <img src={miniMarketLogo} alt='Background image' style={{ width: "142px" }} />
             </Link>
           </div>
           <div className='menu-list-mobile'>
             <ul>
               <li>
-                <Link to='/'>Home</Link>
+                <Link to='/' onClick={handleLinkClick}>
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to='about'>About us</Link>
+                <Link to='about' onClick={handleLinkClick}>
+                  About us
+                </Link>
               </li>
               <li>
-                <Link to='products'>Products</Link>
+                <Link to='products' onClick={handleLinkClick}>
+                  Products
+                </Link>
               </li>
               <li style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
                 <div className='toggle-container' onClick={handleThemeClickModified}>
@@ -51,7 +63,7 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
               </li>
 
               <li>
-                <Link to='cart' className={`nav-cart btn btn-default`} style={{ width: "100px" }}>
+                <Link to='cart' onClick={handleLinkClick} className={`nav-cart btn btn-default`} style={{ width: "100px" }}>
                   Cart ({quantityCart})
                 </Link>
               </li>
