@@ -72,11 +72,6 @@ const Navbar = ({ cart }) => {
           </div>
         </div>
         <div className='hamburger-display'>
-          {/* {!isOpen && (
-            <Link to='cart' className={`nav-cart-style`} style={{ width: "80px", marginRight: "40px", marginTop: "20px" }}>
-              {quantityCart === 0 ? null : `Cart ( ${quantityCart} )`}
-            </Link>
-          )} */}
           {!isOpen && (
             <Link to='cart' className={`nav-cart-style-hamburger`}>
               <div className='cart-icon-hamburger'>
