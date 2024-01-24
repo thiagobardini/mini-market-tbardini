@@ -17,11 +17,11 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
       <div
       className="hamburger-position"
         style={{
-          backgroundColor: !isOpen && "#07080d",
-          display: "flex",
-          justifyContent: "right",
-          margin:  "30px",
-          position: "relative",
+          // backgroundColor: !isOpen && "#07080d",
+          // display: "flex",
+          // justifyContent: "right",
+          // margin:  "30px",
+          // position: "relative",
         }}
       >
         <Hamburger toggled={isOpen} toggle={toggleHamburger} color='white' direction='left' />
