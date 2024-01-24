@@ -73,12 +73,14 @@ const Navbar = ({ cart }) => {
         </div>
 
         {!isOpen && (
-          <Link to='cart' className={`nav-cart-style-hamburger`} style={{ marginRight: "20px" }}>
-            <div className='cart-icon-hamburger'>
-              <FontAwesomeIcon icon={faShoppingCart} style={{ color: "white", fontSize: "30px" }} />
-              {quantityCart > 0 && <span className='cart-badge-hamburger'>{quantityCart}</span>}
-            </div>
-          </Link>
+          <div className='hamburger-display'>
+            <Link to='cart' className={`nav-cart-style-hamburger`} style={{ marginRight: "20px" }}>
+              <div className='cart-icon-hamburger'>
+                <FontAwesomeIcon icon={faShoppingCart} style={{ color: "white", fontSize: "30px" }} />
+                {quantityCart > 0 && <span className='cart-badge-hamburger'>{quantityCart}</span>}
+              </div>
+            </Link>
+          </div>
         )}
 
         <HamburgerMenu isOpen={isOpen} toggleHamburger={toggleHamburger} quantityCart={quantityCart} handleThemeClick={handleThemeClick} isDarkMode={isDarkMode} />

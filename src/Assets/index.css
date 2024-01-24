@@ -725,6 +725,9 @@ input:focus {
   .hamburger-display {
     display: none;
   }
+  .hamburger-menu-display {
+    display: none;
+  }
   .toggle-mobile {
     display: none;
   }
