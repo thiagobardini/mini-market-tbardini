@@ -56,7 +56,7 @@ const Cart = ({ cart, setCart }) => {
                       Product
                     </th>
                     <th width="20%">Unit price</th>
-                    <th width="10%">Quanity</th>
+                    <th width="10%">Quantity</th>
                     <th width="25%">Total</th>
                   </tr>
                 </thead>
