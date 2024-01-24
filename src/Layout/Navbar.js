@@ -5,6 +5,7 @@ import miniMarketLogo from "../Assets/mini-market-logo.png";
 import { useMenuContext } from "../Context/MenuContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = ({ cart }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -44,11 +45,6 @@ const Navbar = ({ cart }) => {
           <div className='nav-display'>
             <ul className='nav-wrapper'>
               <li className='nav-item'>
-                <div className='toggle-container' onClick={handleThemeClick}>
-                  <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>{isDarkMode ? "Dark" : "Light"}</div>
-                </div>
-              </li>
-              <li className='nav-item'>
                 <NavLink to='/' className={activeLink}>
                   Home
                 </NavLink>
@@ -62,6 +58,17 @@ const Navbar = ({ cart }) => {
                 <NavLink to='products' className={activeLink}>
                   Products
                 </NavLink>
+              </li>
+              <li className='nav-item'>
+                <div className='toggle-container' onClick={handleThemeClick}>
+                  <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
+                    {isDarkMode ? (
+                      <FontAwesomeIcon icon={faMoon} color='var(--accent-5)' style={{ fontSize: "14px" }} />
+                    ) : (
+                      <FontAwesomeIcon icon={faSun} color='#f39c12' style={{ fontSize: "14px" }} />
+                    )}
+                  </div>
+                </div>
               </li>
               <li>
                 <NavLink to='cart' className={`nav-item nav-cart btn btn-default ${activeLink}`}>

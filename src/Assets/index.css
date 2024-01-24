@@ -572,13 +572,15 @@ input:focus {
 }
 
 .toggle-container {
+  margin: 0 20px;
   width: 70px;
-  background-color: #c4c4c4;
+  background-color: var(--neutral-2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   user-select: none;
   border-radius: 3px;
-  padding: 2px;
-  height: 32px;
+  padding: 3px;
+  height: 28px;
   position: relative;
 }
 
@@ -600,9 +602,9 @@ input:focus {
   line-height: 16px;
   font-weight: bold;
   cursor: pointer;
-  background-color: #002b49;
+  background-color: #07080d;
   color: white;
-  padding: 8px 12px;
+  padding: 7px 12px;
   border-radius: 18px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   min-width: 46px;
@@ -620,8 +622,9 @@ input:focus {
 }
 
 .disabled {
-  background-color: #707070;
+  background-color: var(--primary-5);
   left: 2px;
+  color: white;
 }
 
 .full-page {

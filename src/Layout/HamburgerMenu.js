@@ -3,6 +3,8 @@ import { Turn as Hamburger } from "hamburger-react";
 import { Link } from "react-router-dom";
 import miniMarketLogo from "../Assets/mini-market-logo.png";
 import { useMenuContext } from "../Context/MenuContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
   const { isOpen, toggleHamburger } = useMenuContext();
@@ -19,7 +21,7 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
   };
 
   return (
-    <div className={isOpen ? "full-page" :"hamburger-menu-display"}  style={{ backgroundColor: "#07080d", zIndex: 99999 }}>
+    <div className={isOpen ? "full-page" : "hamburger-menu-display"} style={{ backgroundColor: "#07080d", zIndex: 99999 }}>
       <div
         className='hamburger-position'
         style={{
@@ -58,7 +60,13 @@ const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
               </li>
               <li style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
                 <div className='toggle-container' onClick={handleThemeClickModified}>
-                  <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>{isDarkMode ? "Dark" : "Light"}</div>
+                  <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
+                    {isDarkMode ? (
+                      <FontAwesomeIcon icon={faMoon} color='var(--accent-5)' style={{ fontSize: "14px" }} />
+                    ) : (
+                      <FontAwesomeIcon icon={faSun} color='#f39c12' style={{ fontSize: "14px" }} />
+                    )}
+                  </div>
                 </div>
               </li>
 
