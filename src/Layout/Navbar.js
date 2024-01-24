@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
 import miniMarketLogo from "../Assets/mini-market-logo.png";
 import { useMenuContext } from "../Context/MenuContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = ({ cart }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -70,11 +72,20 @@ const Navbar = ({ cart }) => {
           </div>
         </div>
         <div className='hamburger-display'>
-          {!isOpen && (
-            <Link to='cart' className={`nav-cart-style`} style={{ width: "80px", marginTop: "20px" }}>
+          {/* {!isOpen && (
+            <Link to='cart' className={`nav-cart-style`} style={{ width: "80px", marginRight: "40px", marginTop: "20px" }}>
               {quantityCart === 0 ? null : `Cart ( ${quantityCart} )`}
             </Link>
+          )} */}
+          {!isOpen && (
+            <Link to='cart' className={`nav-cart-style-hamburger`}>
+              <div className='cart-icon-hamburger'>
+                <FontAwesomeIcon icon={faShoppingCart} style={{ color: "white", fontSize: "30px" }} />
+                {quantityCart > 0 && <span className='cart-badge-hamburger'>{quantityCart}</span>}
+              </div>
+            </Link>
           )}
+
           <div onClick={toggleHamburger}>
             <HamburgerMenu isOpen={isOpen} toggleHamburger={toggleHamburger} quantityCart={quantityCart} handleThemeClick={handleThemeClick} isDarkMode={isDarkMode} />
           </div>

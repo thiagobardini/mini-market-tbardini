@@ -483,6 +483,37 @@ input:focus {
   font-size: 12px;
 }
 
+.nav-cart-style-hamburger {
+  position: relative;
+  display: inline-block;
+  /* width: 80px; */
+  /* margin-right: 40px; */
+  margin-top: 20px;
+  text-decoration: none;
+  /* Other styles for the link */
+}
+
+.cart-icon-hamburger {
+  /* margin: 20px; */
+  /* position: absolute; */
+}
+
+.cart-badge-hamburger {
+  position: absolute;
+  top: -20px;
+  right: -12px;
+  background-color: var(--accent-1); /* Primary color */
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+
 @media (max-width: 770px) {
   .home-layout,
   .about-layout,
