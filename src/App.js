@@ -11,6 +11,7 @@ import ProductDetailNutrition from "./Pages/productDetails/ProductDetailNutritio
 import ProductDetailStorage from "./Pages/productDetails/ProductDetailStorage";
 import StripeSuccess from "./Pages/StripeSuccess";
 import StripeFailed from "./Pages/StripeFailed";
+import Footer from "./Layout/Footer";
 
 function App() {
   const [cart, setCart] = useState(
@@ -25,9 +26,7 @@ function App() {
 
   // Adding product //
   const handleProductAdd = (newProduct) => {
-    const existingProduct = cart.find(
-      (product) => product.id === newProduct.id
-    );
+    const existingProduct = cart.find((product) => product.id === newProduct.id);
 
     if (existingProduct) {
       const updatedCart = cart.map((product) => {
@@ -50,48 +49,26 @@ function App() {
   };
 
   return (
-    <>
+    // <div style={{ height: "100vh", width: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+    <div className="app">
       <Navbar cart={cart} />
-      <div className="container">
+      <div className='container'>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route
-            path="/success"
-            element={<StripeSuccess setCart={setCart} />}
-          />
-          <Route path="/failed" element={<StripeFailed setCart={setCart} />} />
-          <Route
-            path="/products"
-            element={
-              <Products
-                cart={cart}
-                onProductAdd={handleProductAdd}
-                onProductDelete={handleProductDelete}
-              />
-            }
-          />
-          <Route
-            path="/products/:id"
-            element={<ProductDetails onProductAdd={handleProductAdd} />}
-          >
-            <Route
-              path=""
-              element={<ProductDetailInfo onProductAdd={handleProductAdd} />}
-            ></Route>
-            <Route
-              path="nutrition"
-              element={<ProductDetailNutrition />}
-            ></Route>
-            <Route path="storage" element={<ProductDetailStorage />}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/success' element={<StripeSuccess setCart={setCart} />} />
+          <Route path='/failed' element={<StripeFailed setCart={setCart} />} />
+          <Route path='/products' element={<Products cart={cart} onProductAdd={handleProductAdd} onProductDelete={handleProductDelete} />} />
+          <Route path='/products/:id' element={<ProductDetails onProductAdd={handleProductAdd} />}>
+            <Route path='' element={<ProductDetailInfo onProductAdd={handleProductAdd} />}></Route>
+            <Route path='nutrition' element={<ProductDetailNutrition />}></Route>
+            <Route path='storage' element={<ProductDetailStorage />}></Route>
           </Route>
-          <Route
-            path="/cart"
-            element={<Cart cart={cart} setCart={setCart} />}
-          />
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
         </Routes>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
 

@@ -1,48 +1,56 @@
 import React from "react";
-import Hamburger from "hamburger-react";
+import { Turn as Hamburger } from "hamburger-react";
 import { Link } from "react-router-dom";
+import miniMarketLogo from "../Assets/mini-market-logo.png";
+import { useMenuContext } from "../Context/MenuContext";
 
-const HamburgerMenu = ({ isOpen, setOpen, quantityCart }) => {
+const HamburgerMenu = ({ quantityCart, isDarkMode, handleThemeClick }) => {
+  const { isOpen, toggleHamburger } = useMenuContext();
+
+  const handleThemeClickModified = (event) => {
+    event.stopPropagation();
+    handleThemeClick();
+  };
+
   return (
-    <div className={isOpen && "full-page"}>
+    <div className={isOpen && "full-page"} style={{ backgroundColor: isDarkMode && isOpen ? "#07080d" : "#444", zIndex: 99999 }}>
       <div
         style={{
-          cursor: "pointer",
-          height: "48px",
+          backgroundColor: !isOpen && "#07080d",
+          display: "flex",
+          justifyContent: "right",
+          margin: isOpen && "30px",
           position: "relative",
-          transition: "all 0.4s cubic-bezier(0, 0, 0, 1) 0s",
-          userSelect: "none",
-          outline: "none",
-          transform: "rotate(-180deg)",
-          marginRight: "32px",
         }}
       >
-        <Hamburger toggled={isOpen} toggle={setOpen} color="white" />
+        <Hamburger toggled={isOpen} toggle={toggleHamburger} color='white' direction='left' />
       </div>
       {isOpen && (
-        <div className="mobile-wrapper">
+        <div className='mobile-wrapper'>
           <div>
-            <Link to="/">
-              <img
-                src={"https://i.imgur.com/qHvvhHA.png"}
-                alt="Background image"
-                style={{ width: "142px" }}
-              />
+            <Link to='/'>
+              <img src={miniMarketLogo} alt='Background image' style={{ width: "142px" }} />
             </Link>
           </div>
-          <div className="menu-list-mobile">
+          <div className='menu-list-mobile'>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link to="about">About us</Link>
+                <Link to='about'>About us</Link>
               </li>
               <li>
-                <Link to="products">Products</Link>
+                <Link to='products'>Products</Link>
               </li>
+              <li style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+                <div className='toggle-container' onClick={handleThemeClickModified}>
+                  <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>{isDarkMode ? "Dark" : "Light"}</div>
+                </div>
+              </li>
+
               <li>
-                <Link to="cart" className={`nav-cart btn btn-default`}>
+                <Link to='cart' className={`nav-cart btn btn-default`} style={{ width: "100px" }}>
                   Cart ({quantityCart})
                 </Link>
               </li>
