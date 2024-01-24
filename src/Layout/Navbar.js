@@ -71,20 +71,17 @@ const Navbar = ({ cart }) => {
             </ul>
           </div>
         </div>
-        <div className='hamburger-display'>
-          {!isOpen && (
-            <Link to='cart' className={`nav-cart-style-hamburger`}>
-              <div className='cart-icon-hamburger'>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: "white", fontSize: "30px" }} />
-                {quantityCart > 0 && <span className='cart-badge-hamburger'>{quantityCart}</span>}
-              </div>
-            </Link>
-          )}
 
-          <div onClick={toggleHamburger}>
-            <HamburgerMenu isOpen={isOpen} toggleHamburger={toggleHamburger} quantityCart={quantityCart} handleThemeClick={handleThemeClick} isDarkMode={isDarkMode} />
-          </div>
-        </div>
+        {!isOpen && (
+          <Link to='cart' className={`nav-cart-style-hamburger`} style={{ marginRight: "20px" }}>
+            <div className='cart-icon-hamburger'>
+              <FontAwesomeIcon icon={faShoppingCart} style={{ color: "white", fontSize: "30px" }} />
+              {quantityCart > 0 && <span className='cart-badge-hamburger'>{quantityCart}</span>}
+            </div>
+          </Link>
+        )}
+
+        <HamburgerMenu isOpen={isOpen} toggleHamburger={toggleHamburger} quantityCart={quantityCart} handleThemeClick={handleThemeClick} isDarkMode={isDarkMode} />
       </nav>
     </>
   );
