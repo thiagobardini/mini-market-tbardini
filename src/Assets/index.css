@@ -259,6 +259,11 @@ input:focus {
 
 .nav-item a.active {
   font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  transition: transform 0.5s;
+  transform: scale(1.1);
 }
 
 .nav-cart {
