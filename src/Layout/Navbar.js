@@ -59,7 +59,7 @@ const Navbar = ({ cart }) => {
                   Products
                 </NavLink>
               </li>
-              <li className='nav-item'>
+              <li className='nav-item' style={{ marginTop: "20px", marginRight: "20px" }}>
                 <div className='toggle-container' onClick={handleThemeClick}>
                   <div className={`dialog-button ${isDarkMode ? "" : "disabled"}`}>
                     {isDarkMode ? (
@@ -71,8 +71,11 @@ const Navbar = ({ cart }) => {
                 </div>
               </li>
               <li>
-                <NavLink to='cart' className={`nav-item nav-cart btn btn-default ${activeLink}`}>
-                  Cart ({quantityCart})
+                <NavLink to='cart' className={`nav-cart-style-hamburger`} style={{ marginRight: "20px" }}>
+                  <div className='cart-icon-hamburger'>
+                    <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#f2ecee", fontSize: "50px" }} />
+                    {quantityCart > 0 && <span className='cart-badge-hamburger'>{quantityCart}</span>}
+                  </div>
                 </NavLink>
               </li>
             </ul>
