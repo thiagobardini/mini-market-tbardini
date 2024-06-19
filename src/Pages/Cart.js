@@ -3,7 +3,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import Button from "../Components/Button";
 import Input from "../Components/Input";
 import { Link } from "react-router-dom";
-import { Typography, Box, List, ListItem, ListItemText, Divider, Modal } from "@mui/material";
+import { Typography, Box, List, ListItem, ListItemText, Divider, Modal, IconButton, Tooltip } from "@mui/material";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import ButtonMui from "@mui/material/Button";
 
 const stripeLoadedPromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
@@ -11,6 +12,7 @@ const stripeLoadedPromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 const Cart = ({ cart, setCart }) => {
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
+  const [tooltipOpen, setTooltipOpen] = useState(false);
 
   const totalValue = cart.reduce((accumulator, currPrice) => {
     return currPrice.price * currPrice.quantity + accumulator;
@@ -43,6 +45,14 @@ const Cart = ({ cart, setCart }) => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    setTooltipOpen(true);
+    setTimeout(() => {
+      setTooltipOpen(false);
+    }, 1000);
+  };
 
   return (
     <>
@@ -144,7 +154,12 @@ const Cart = ({ cart, setCart }) => {
                       </Typography>
                       <List>
                         <ListItem>
-                          <ListItemText primary='Card number: 4242 4242 4242 4242 (test card)' />
+                          <ListItemText primary='Card number: 4242 4242 4242 4242' />
+                          <Tooltip open={tooltipOpen} title="Copied!" arrow placement="top">
+                            <IconButton onClick={() => copyToClipboard('4242 4242 4242 4242')} sx={{ marginLeft: 2 }}>
+                              <ContentCopyIcon />
+                            </IconButton>
+                          </Tooltip>
                         </ListItem>
                         <Divider />
                         <ListItem>
