@@ -1,4 +1,10 @@
- ## Mini Market
+<p align="center">
+<img src="https://raw.githubusercontent.com/thiagobardini/tbardini/main/src/Assets/images/TBardini-dot-gold.png" width="200" alt="Demo Report Logo">
+</p>
+
+---
+ 
+ # Mini Market
   [ Mini Market Tbardini Page](https://mini-market-tbardini.vercel.app/)
 
 Welcome to the Mini Market repository! This project is an online grocery shopping platform that allows users to browse and purchase products directly from their device. We hope you enjoy using our application and we appreciate any feedback or suggestions you may have. Thanks for visiting our repository!
