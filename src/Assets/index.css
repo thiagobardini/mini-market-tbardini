@@ -154,6 +154,15 @@ a:hover {
   border-radius: 10px;
 }
 
+.btn-outline-instructions {
+  color: var(--primary-1);
+  background-color: none !important;
+  border: var(--primary-1) 2px solid;
+  /* box-shadow: 1px 1px 7px var(--surface-shadow); */
+  padding: 8px 25px;
+  border-radius: 10px;
+}
+
 /* FORMS */
 .form h2 {
   font-size: 24px;
@@ -586,7 +595,7 @@ input:focus {
   user-select: none;
   border-radius: 3px;
   padding: 3px;
-  height: 28px;
+  height: 25px;
   position: relative;
 }
 
@@ -610,7 +619,7 @@ input:focus {
   cursor: pointer;
   background-color: #07080d;
   color: white;
-  padding: 7px 12px;
+  padding: 6px 12px;
   border-radius: 18px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   min-width: 46px;

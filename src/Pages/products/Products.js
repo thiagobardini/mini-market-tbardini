@@ -1,27 +1,36 @@
-import { useState, useEffect } from "react";
-import useFetch from "../../Hooks/useFetch";
-import Product from "./Product";
-import Loader from "../../Components/Loader";
+import { useState, useEffect } from 'react'
+import useFetch from '../../Hooks/useFetch'
+import Product from './Product'
+import Loader from '../../Components/Loader'
+import { Typography } from '@mui/material'
 
 export default function Products(props) {
-  const { cart, onProductAdd, onProductDelete } = props;
-  const [products, setProducts] = useState([]);
-  const { get, loading } = useFetch("https://react-projetcs.firebaseio.com/");
+  const { cart, onProductAdd, onProductDelete } = props
+  const [products, setProducts] = useState([])
+  const { get, loading } = useFetch('https://react-projetcs.firebaseio.com/')
 
   useEffect(() => {
-    get("supermarket.json")
+    get('supermarket.json')
       .then((data) => {
-        setProducts(data);
-        console.log(data);
+        setProducts(data)
+        console.log(data)
       })
-      .catch((error) => console.log(error));
-  }, []);
+      .catch((error) => console.log(error))
+  }, [])
 
   return (
     <div className="products-layout">
       <div className="display-margin">
-        <h1>Products</h1>
-        <p>Take a look at our products</p>
+        <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
+          Products
+        </Typography>
+        <Typography
+          gutterBottom
+          variant="subtitle1"
+          sx={{ marginBottom: '20px' }}
+        >
+          Take a look at our products
+        </Typography>
       </div>
       {loading && (
         <div className="box-loader">
@@ -40,9 +49,9 @@ export default function Products(props) {
               onProductAdd={onProductAdd}
               onProductDelete={onProductDelete}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }

@@ -1,50 +1,68 @@
-import React, { useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import Button from "../Components/Button";
-import Input from "../Components/Input";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { loadStripe } from '@stripe/stripe-js'
+import Button from '../Components/Button'
+import Input from '../Components/Input'
+import { Link } from 'react-router-dom'
+import {
+  Typography,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  Modal,
+} from '@mui/material'
+import ButtonMui from '@mui/material/Button'
 
-const stripeLoadedPromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
+const stripeLoadedPromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY)
 
 const Cart = ({ cart, setCart }) => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('')
+  const [open, setOpen] = useState(false)
 
   const totalValue = cart.reduce((accumulator, currPrice) => {
-    return currPrice.price * currPrice.quantity + accumulator;
-  }, 0);
+    return currPrice.price * currPrice.quantity + accumulator
+  }, 0)
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const lineItems = cart.map((product) => {
-      return { price: product.price_id, quantity: product.quantity };
-    });
+      return { price: product.price_id, quantity: product.quantity }
+    })
 
     stripeLoadedPromise.then((stripe) => {
       stripe
         .redirectToCheckout({
           lineItems: lineItems,
-          mode: "payment",
-          successUrl: "https://mini-market-tbardini.vercel.app/success",
-          cancelUrl: "https://mini-market-tbardini.vercel.app/failed",
+          mode: 'payment',
+          successUrl: 'https://mini-market-tbardini.vercel.app/success',
+          cancelUrl: 'https://mini-market-tbardini.vercel.app/failed',
           customerEmail: email,
         })
         .then((response) => {
-          // this will only log if the redirect did not work
-          console.log(response.error);
+          console.log(response.error)
         })
         .catch((error) => {
-          // wrong API key? you will see the error message here
-          console.log(error);
-        });
-    });
-  };
+          console.log(error)
+        })
+    })
+  }
+
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
     <>
       <div className="cart-layout">
         <div>
-          <h1>Your Cart</h1>
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{ fontWeight: 'bold', mt: 2 }}
+          >
+            Your Cart
+          </Typography>
           {cart.length === 0 ? (
             <p>You have not added any product to your cart yet.</p>
           ) : (
@@ -61,33 +79,31 @@ const Cart = ({ cart, setCart }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cart.map((product) => {
-                    return (
-                      <tr key={product.id}>
-                        <td>
-                          <img
-                            src={product.image}
-                            width="30"
-                            height="30"
-                            alt=""
-                          />
-                          <Link to="/products" className="item-link">
-                            {product.name}
-                          </Link>
-                        </td>
-                        <td>${product.price}</td>
-                        <td>{product.quantity}</td>
-                        <td>
-                          <strong>
-                            $
-                            {parseFloat(
-                              product.quantity * product.price
-                            ).toFixed(2)}
-                          </strong>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  {cart.map((product) => (
+                    <tr key={product.id}>
+                      <td>
+                        <img
+                          src={product.image}
+                          width="30"
+                          height="30"
+                          alt=""
+                        />
+                        <Link to="/products" className="item-link">
+                          {product.name}
+                        </Link>
+                      </td>
+                      <td>${product.price}</td>
+                      <td>{product.quantity}</td>
+                      <td>
+                        <strong>
+                          $
+                          {parseFloat(product.quantity * product.price).toFixed(
+                            2
+                          )}
+                        </strong>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
                 <tfoot>
                   <tr>
@@ -101,10 +117,10 @@ const Cart = ({ cart, setCart }) => {
               </table>
               <div>
                 <form className="pay-form" onSubmit={handleFormSubmit}>
-                  <p>
+                  <Typography variant="body1" paragraph>
                     Enter your email and then click on pay and your products
                     will be delivered to you on the same day!
-                  </p>
+                  </Typography>
                   <Input
                     autocomplete="email"
                     placeholder="Email"
@@ -113,29 +129,89 @@ const Cart = ({ cart, setCart }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                  <Button type="submit" className="btn btn-accent">
-                    Pay
-                  </Button>
+                  <Box sx={{ display: 'flex', gap: 2 }}>
+                    <Button type="submit" className="btn btn-accent">
+                      Pay
+                    </Button>
+                    <ButtonMui
+                      variant="outlined"
+                      color="primary"
+                      onClick={handleOpen}
+                      sx={{
+                        textTransform: 'none', // Para evitar que o texto fique em maiúsculas
+                        borderColor: 'var(--primary-1)', // Cor da borda
+                        color: 'var(--primary-1)', // Cor do texto
+                      }}
+                    >
+                      View Payment Instructions
+                    </ButtonMui>
+                  </Box>
                 </form>
-                <div className="cart-credit-card">
-                  <p>
-                    To process a purchase, please use the following instruction
-                    below:
-                  </p>
-                  <ul>
-                    <li>Card number: 4242 4242 4242 4242 (test card)</li>
-                    <li>Expiration date: Any date greater than today </li>
-                    <li>CVC: 3 digits (any number)</li>
-                  </ul>
-                  <p>
-                    <em>
-                      Please note that the expiration date, CVC, and cardholder
-                      name can be entered as any value as it is a test card.
-                      Keep in mind that this is a test credit card and no real
-                      transactions will be processed or charged. This card
-                      number should only be used for testing purposes.
-                    </em>
-                  </p>
+                <div className="cart-credit-card" style={{ marginTop: '16px' }}>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="payment-instructions-title"
+                    aria-describedby="payment-instructions-description"
+                  >
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: { xs: '80vw', md: 400 },
+                        bgcolor: 'background.paper',
+                        border: '2px solid #000',
+                        boxShadow: 24,
+                        p: 4,
+                      }}
+                    >
+                      <Typography
+                        id="payment-instructions-title"
+                        variant="h6"
+                        component="h2"
+                        gutterBottom
+                      >
+                        Payment Instructions
+                      </Typography>
+                      <Typography
+                        id="payment-instructions-description"
+                        variant="body2"
+                        paragraph
+                      >
+                        To process a purchase, please use the following
+                        instructions:
+                      </Typography>
+                      <List>
+                        <ListItem>
+                          <ListItemText primary="Card number: 4242 4242 4242 4242 (test card)" />
+                        </ListItem>
+                        <Divider />
+                        <ListItem>
+                          <ListItemText primary="Expiration date: Any date greater than today" />
+                        </ListItem>
+                        <Divider />
+                        <ListItem>
+                          <ListItemText primary="CVC: 3 digits (any number)" />
+                        </ListItem>
+                      </List>
+                      <Typography
+                        variant="body2"
+                        paragraph
+                        sx={{ marginTop: 2 }}
+                      >
+                        <em>
+                          Please note that the expiration date, CVC, and
+                          cardholder name can be entered as any value as it is a
+                          test card. Keep in mind that this is a test credit
+                          card and no real transactions will be processed or
+                          charged. This card number should only be used for
+                          testing purposes.
+                        </em>
+                      </Typography>
+                    </Box>
+                  </Modal>
                 </div>
               </div>
             </>
@@ -143,7 +219,7 @@ const Cart = ({ cart, setCart }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
