@@ -138,9 +138,9 @@ const Cart = ({ cart, setCart }) => {
                       color="primary"
                       onClick={handleOpen}
                       sx={{
-                        textTransform: 'none', // Para evitar que o texto fique em maiúsculas
-                        borderColor: 'var(--primary-1)', // Cor da borda
-                        color: 'var(--primary-1)', // Cor do texto
+                        textTransform: 'none',
+                        borderColor: 'var(--primary-1)',
+                        color: 'var(--primary-1)',
                       }}
                     >
                       View Payment Instructions
@@ -163,12 +163,13 @@ const Cart = ({ cart, setCart }) => {
                         width: { xs: '80vw', md: 400 },
                         bgcolor: 'background.paper',
                         border: '2px solid #000',
+                        color: 'black',
                         boxShadow: 24,
                         p: 4,
                       }}
                     >
                       <Typography
-                        id="payment-instructions-title"
+                        // id="payment-instructions-title"
                         variant="h6"
                         component="h2"
                         gutterBottom

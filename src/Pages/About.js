@@ -2,6 +2,8 @@ import React from 'react'
 import { Container, Box, Typography } from '@mui/material'
 
 const About = () => {
+  const isDarkMode = document.body.classList.contains('dark')
+
   return (
     <Container
       className="about-layout display-margin"
@@ -25,10 +27,10 @@ const About = () => {
           alt="About Us"
         />
       </Box>
-      <Typography variant="h3" gutterBottom sx={{ fontWeight: 'bold' }}>
+      <Typography variant="h3" gutterBottom>
         About Us
       </Typography>
-      <Typography variant="body1" sx={{ mb: 4, color: 'var(--neutral-1)' }}>
+      <Typography variant="body1">
         Fresh Produce Guaranteed:
         <br />
         Shop on Our App and Have it Delivered to Your Home

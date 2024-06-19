@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { Box, Typography, Container } from '@mui/material'
 
 const Home = () => {
+  const isDarkMode = document.body.classList.contains('dark')
+
   return (
     <Container
       className="home-layout"
@@ -26,10 +28,21 @@ const Home = () => {
           alt="Convenient Grocery Shopping"
         />
       </Box>
-      <Typography variant="h3" gutterBottom sx={{ fontWeight: 'bold' }}>
+      <Typography
+        variant="h3"
+        gutterBottom
+        sx={{
+          fontWeight: 'bold',
+        }}
+      >
         Simulate Your Shopping
       </Typography>
-      <Typography variant="body1" sx={{ mb: 4, color: 'var(--neutral-1)' }}>
+      <Typography
+        variant="body1"
+        sx={{
+          mb: 4,
+        }}
+      >
         Experience the convenience of online grocery shopping with Mini Market's
         App. This project simulates an e-commerce platform with seamless online
         payments using Stripe. Order your items and have them delivered right to
