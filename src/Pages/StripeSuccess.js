@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Container, Box } from "@mui/material";
 
 const StripeSuccess = ({ setCart }) => {
   useEffect(() => {
@@ -8,27 +9,23 @@ const StripeSuccess = ({ setCart }) => {
   }, []);
 
   return (
-    <div className="home-layout">
+    <Container className='home-layout' maxWidth='lg' sx={{ textAlign: "center", padding: "2rem" }}>
       <img
-        src="https://i.imgur.com/VCJEqSC.png"
-        width="100%"
+        src='https://i.imgur.com/VCJEqSC.png'
+        width='100%'
         //   style={{ opacity: "0.7" }}
-        height="auto"
-        className="rounded home-image"
-        alt=""
+        height='auto'
+        className='rounded home-image'
+        alt=''
       />
-      <div>
+      <Box>
         <h1>Successful Purchase!</h1>
         <p>Fresh produce on the way. Thanks for shopping with us.</p>
-        <Link
-          to="/"
-          className="btn btn-accent"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
+        <Link to='/' className='btn btn-accent' style={{ display: "flex", justifyContent: "center" }}>
           Home
         </Link>
-      </div>
-    </div>
+      </Box>
+    </Container>
   );
 };
 
