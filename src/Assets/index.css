@@ -216,11 +216,12 @@ input:focus {
 /* NAVBAR */
 .navbar {
   background-color: #07080d;
-  padding: 10px;
+  /* padding: 10px; */
   box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07), 0px -3px 7px 1px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .nav-brand {
@@ -251,13 +252,13 @@ input:focus {
 }
 
 .nav-item a {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   text-decoration: none;
   font-weight: normal;
   color: var(--primary-1);
   display: inline-block;
   text-align: center;
-  padding: 13px 20px;
+  padding-inline: 20px;
   min-width: 75px;
 }
 
@@ -272,7 +273,7 @@ input:focus {
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
   transition: transform 0.5s;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .nav-cart {

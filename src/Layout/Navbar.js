@@ -49,8 +49,8 @@ const Navbar = ({ cart }) => {
             alignItems: 'center',
           }}
         >
-          <div className="img-grow">
-            <Link to="/" className="nav-brand" style={{ display: 'flex' }}>
+          <div className="img-grow" style={{position: 'relative',}}>
+            <Link to="/" className="nav-brand" style={{ display: 'flex', position: "absolute", top: "-38px" }}>
               <img
                 src={miniMarketLogo}
                 alt="Background image"
@@ -78,7 +78,7 @@ const Navbar = ({ cart }) => {
               </li>
               <li
                 className="nav-item"
-                style={{ marginTop: '20px', marginRight: '20px' }}
+                style={{  marginRight: '20px' }}
               >
                 <div className="toggle-container" onClick={handleThemeClick}>
                   <div
